@@ -1,16 +1,21 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const GenericError = () => {
+    const history = useHistory();
+
+    const retry = () => {
+        history.goBack();
+    };
+
     return (
         <GenericErrorContainer>
             <MessageError>
-                {`Oops! An unexpected error has occurred `}
-                <Link to={'/'}>Click here</Link>
-                {` to try again.`}
+                <span>Oops! An unexpected error has occurred. Try again.</span>
+                <span onClick={retry}>Click here</span>
             </MessageError>
             <div className="image-bees">
-                <img src="/logo_bees.png" />
+                <img data-testid="image-bees" src="/logo_bees.png" />
             </div>
         </GenericErrorContainer>
     )

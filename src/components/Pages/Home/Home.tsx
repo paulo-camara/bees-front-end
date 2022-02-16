@@ -22,7 +22,7 @@ export const Home = () => {
         }
     };
 
-    const handleChangeName = (name: string, key: any) => {
+    const handleChangeName = (name: string) => {
         const isAlphabetical = /^[a-zA-Z- ]+$/.test(name) || name === "";
 
         if (isAlphabetical) {
@@ -43,14 +43,16 @@ export const Home = () => {
                 <div className="inputs">
                     <input
                         className="input-field-name"
+                        data-testid="input-field"
                         placeholder="Full name"
                         value={name}
-                        onChange={(event) => handleChangeName(event.target.value, event)}
+                        onChange={(event) => handleChangeName(event.target.value)}
                     />
                 </div>
                 <div className="inputs">
                     <input
                         className="input-field-older-than"
+                        data-testid="input-check-box"
                         type={"checkbox"}
                         checked={olderThan}
                         onChange={({ target }) => setOlderThan(target.checked)}
@@ -59,6 +61,7 @@ export const Home = () => {
                 </div>
                 <button
                     className="action-enter" 
+                    data-testid="button-enter"
                     onClick={verifyContitions}
                 >
                     Enter
