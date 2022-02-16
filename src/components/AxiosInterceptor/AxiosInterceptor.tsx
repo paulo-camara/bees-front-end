@@ -13,7 +13,7 @@ export const AxiosInterceptors = ({ children } : any) => {
     const _removeLoaderTimeout = () => {
         setTimeout(() => {
             setIsLoading(false);
-        }, 700);
+        }, 500);
     };
 
     api.interceptors.request.use(
