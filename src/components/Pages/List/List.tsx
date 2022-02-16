@@ -34,24 +34,36 @@ export const List = () => {
         toastr.error("Message");
     };
 
-    const getDataFail = () => { 
+    const getDataFail = () => {
         toastr.error("Message");
         history.push('/error');
     };
 
+    const onDeleteItem = (teste: string) => {
+        const newData = data.filter(({ id }) => id !== teste);
+
+        setData(newData);
+    };
+
     return (
         <Layout>
-            <div className="container-list">{data.map(({ name, phone, postal_code, brewery_type }, index) => {
-                return (
-                    <Card
-                        key={index}
-                        title={name}
-                        phone={phone}
-                        postalCode={postal_code}
-                        type={brewery_type}
-                        address={"400 Brown Cir Knox, Indiana - United States"} />
-                )
-            })}</div>
+            <div className="container-list">
+                {data.map(({ id, name, phone, postal_code, brewery_type, street, city, knox, country }) => {
+                    return (
+                        <Card
+                            key={id}
+                            id={id}
+                            title={name}
+                            phone={phone}
+                            postalCode={postal_code}
+                            type={brewery_type}
+                            address={`${street} ${knox}, ${city} - ${country}`}
+                            onRemove={onDeleteItem} />
+                    )
+                })}
+
+                {data.length === 0 && <span className="message-data-empty">No items to show</span>}
+            </div>
         </Layout>
     )
 };

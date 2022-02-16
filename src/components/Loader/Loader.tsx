@@ -17,7 +17,7 @@ export const Loader = styled.div`
     width: 100px;
     height: 100px;
     border: 7px solid #FFFFFF;
-    border-top-color: #ee6b2f;
+    border-top-color: black;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     @keyframes spin {

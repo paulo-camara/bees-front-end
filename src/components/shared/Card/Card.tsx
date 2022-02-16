@@ -7,13 +7,19 @@ type CardPropsModel = {
     phone: string;
     postalCode: string;
     type: string;
+    id: string;
+    onRemove: Function;
 };
 
-export const Card = ({ title, address, phone, postalCode, type }: CardPropsModel) => {
+export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: CardPropsModel) => {
     return (
         <ContainerCard>
             <Header className="header">
-                <img className="icon_trash" src="/icon_trash.png" />
+                <img
+                    className="icon_trash"
+                    src="/icon_trash.png"
+                    onClick={() => onRemove(id)}
+                />
             </Header>
             <Title>
                 <span>{title}</span>
@@ -32,6 +38,7 @@ export const Card = ({ title, address, phone, postalCode, type }: CardPropsModel
                     icon={"fa-phone"}
                     value={phone} />
                 <Tag
+                    cursorPointer={true}
                     icon={"fa-plus"}
                     value={"Add More"} />
             </ContainerTags>
@@ -41,6 +48,7 @@ export const Card = ({ title, address, phone, postalCode, type }: CardPropsModel
 
 const ContainerCard = styled.div`
     width: 240px;
+    height: 240px;
     border: 1px solid black;
     border-radius: 4px;
     padding: 5px 20px 20px 20px;
@@ -64,6 +72,8 @@ const Title = styled.div`
 `;
 
 const Address = styled.div`
+    margin-top: 15px;
+    font-size: 15px;
     color: #3f3f46;
 `;
 

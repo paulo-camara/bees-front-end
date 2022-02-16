@@ -1,7 +1,7 @@
 .container-list-page {
     text-align: center;
-    padding-top: 100px;
     background-color: #f2ec54;
+    padding-top: 7%;
 
     .container-fields {
         height: 60vh;
@@ -41,5 +41,9 @@
         height: 150px;
         display: flex;
         justify-content: start;
+
+        @media (min-width: 1593px) {
+            padding-top: 2.5%; 
+        }
     }
 }

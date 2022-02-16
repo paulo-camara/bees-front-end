@@ -23,6 +23,8 @@ export const Layout = ({ children }: any) => {
             </div>
             <span className="userName">{actionUserContext.userName}</span>
         </header>
-        {children}
+        <div style={{height: "100%"}}>
+            {children}
+        </div>
     </div>
 };

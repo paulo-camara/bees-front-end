@@ -6,4 +6,10 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+
+    .message-data-empty {
+        font-size: 30px;
+        font-weight: 700;
+        color: #b7aeae;
+    }
 }
