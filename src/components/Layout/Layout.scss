@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2ec54;
+    height: 40px;
+    font-size: 22px;
+    padding: 10px 15px;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .go-back {
+        display: flex;
+        gap: 10px;
+        .back-page-label {
+            cursor: pointer;
+        }
+    
+        .fa-arrow-alt-circle-left {
+            margin-top: 7px;
+            font-size: 30px;
+        }
+    }
+}

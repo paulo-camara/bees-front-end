@@ -1,0 +1,45 @@
+.container-list-page {
+    text-align: center;
+    padding-top: 100px;
+    background-color: #f2ec54;
+
+    .container-fields {
+        height: 60vh;
+        
+        .message-rules, .inputs {
+            margin-top: 10px;
+        }
+    
+        .inputs {
+            .input-field-name {
+                padding-left: 10px;
+                height: 30px;
+                width: 300px;
+                border-radius: 4px;
+                border: 0px
+            }
+    
+            .input-field-older-than {
+                cursor: pointer;
+            }
+        }
+    
+        .action-enter {
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            width: 80px;
+            height: 30px;
+            border-radius: 4px;
+            border: 0px;
+            cursor: pointer;
+        }
+    }
+
+    .image-bees {
+        bottom: 20px;
+        height: 150px;
+        display: flex;
+        justify-content: start;
+    }
+}

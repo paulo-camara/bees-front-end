@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './main.scss';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { Home } from './components/Pages/Home/Home';
+import { List } from './components/Pages/List/List';
+import { GenericError } from './components/Pages/GenericError/GenericError';
+import { AxiosInterceptors } from './components/AxiosInterceptor/AxiosInterceptor';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AxiosInterceptors>
+      <Router>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></link>
+        <Switch>
+          <Route exact path="/">
+            <Redirect from="/" to={'/home'} />
+          </Route>
+
+          <Route exact path={'/home'} component={Home} />
+          <Route exact path={'/list'} component={List} />
+          <Route exact path={'/error'} component={GenericError} />
+
+          <Route component={GenericError} />
+        </Switch>
+      </Router>
+    </AxiosInterceptors>
+  )
 }
 
 export default App;
