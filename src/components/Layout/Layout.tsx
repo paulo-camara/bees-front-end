@@ -21,7 +21,7 @@ export const Layout = ({ children }: any) => {
                 <img className="icon_trash" src="/icon_back.png" />
                 <span className="back-page-label">Go back</span>
             </div>
-            <span>{actionUserContext.userName}</span>
+            <span className="userName">{actionUserContext.userName}</span>
         </header>
         {children}
     </div>

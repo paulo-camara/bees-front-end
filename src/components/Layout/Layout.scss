@@ -6,12 +6,16 @@ header {
     font-size: 22px;
     padding: 10px 15px;
     position: fixed;
-    width: 98%;
+    width: 100%;
 
     span {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .userName {
+        padding-right: 30px;
     }
 
     .go-back {
