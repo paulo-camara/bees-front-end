@@ -10,7 +10,7 @@ export const GenericError = () => {
                 {` to try again.`}
             </MessageError>
             <div className="image-bees">
-                <img src="https://nfa-blob-storage.global.ssl.fastly.net/nfa-static/prod/home/benefits-image.png" />
+                <img src="/logo_bees.png" />
             </div>
         </GenericErrorContainer>
     )

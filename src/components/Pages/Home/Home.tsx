@@ -1,15 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import toastr from "toastr";
+import { UserContext } from "../../../contexts/userContext";
 
 export const Home = () => {
     const history = useHistory();
+
+    const actionUserContext = useContext(UserContext);
 
     const [name, setName] = useState<string>("");
     const [olderThan, setOlderThan] = useState<boolean>(false);
 
     const verifyContitions = () => {
         if (name && olderThan) {
+            actionUserContext.setUserName(name);
             history.push('/list');
+        } else if (!name) {
+            toastr.error("Fill in the fields correctly");
+        } else {
+            toastr.warning("Oh! That sad! You must be +18 to access this content.");
         }
     };
 
@@ -49,15 +58,14 @@ export const Home = () => {
                     <label>Are you older than 18 years old?</label>
                 </div>
                 <button
-                    className="action-enter"
-                    disabled={!name || !olderThan}
+                    className="action-enter" 
                     onClick={verifyContitions}
                 >
                     Enter
                 </button>
             </div> 
             <div className="image-bees">
-                <img src="https://nfa-blob-storage.global.ssl.fastly.net/nfa-static/prod/home/benefits-image.png" />
+                <img src="/logo_bees.png" />
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ export const Card = ({ title, address, phone, postalCode, type }: CardPropsModel
     return (
         <ContainerCard>
             <Header className="header">
-                <i className="fa fa-trash" />
+                <img className="icon_trash" src="/icon_trash.png" />
             </Header>
             <Title>
                 <span>{title}</span>
@@ -53,9 +53,8 @@ const Header = styled.div`
     margin-top: 5px;
     margin-bottom: 10px;
 
-    .fa-trash {
+    .icon_trash {
         cursor: pointer;
-        color: #3f3f46;
     }
 `;
 
