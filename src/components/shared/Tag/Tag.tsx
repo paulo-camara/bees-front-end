@@ -9,8 +9,8 @@ type TagPropsModel = {
 export const Tag = ({ value, icon, cursorPointer }: TagPropsModel) => {
     return (
         <ContainerTag cursorPointer={cursorPointer}>
-            <i className={`fa ${icon}`} />
-            {value}
+            <img src={icon} />
+            <span>{value}</span>
         </ContainerTag>
     )
 };
@@ -25,9 +25,14 @@ const ContainerTag = styled.div<ContainerTagModel>`
     border-radius: 22px;
     font-size: 12px;
     cursor: ${props => props.cursorPointer ? "pointer" : "default"};
+    display: flex;
 
-    i {
+    img {
         margin-right: 5px;
-        font-size: 11px;
+        height: 16px;
+    }
+
+    span {
+        margin-top: 2px;
     }
 `;

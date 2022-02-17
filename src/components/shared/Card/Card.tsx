@@ -17,7 +17,7 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
             <Header className="header">
                 <img
                     className="icon_trash"
-                    src="/icon_trash.png"
+                    src="/images/icon_trash.png"
                     onClick={() => onRemove(id)}
                 />
             </Header>
@@ -29,17 +29,17 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
             </Address>
             <ContainerTags>
                 <Tag
-                    icon={"fa-chart-bar"}
+                    icon={"/images/phone_icon.png"}
                     value={type.toUpperCase()} />
                 <Tag
-                    icon={"fa-thumbtack"}
+                    icon={"/images/location-marker.png"}
                     value={postalCode} />
                 <Tag
-                    icon={"fa-phone"}
+                    icon={"images/phone_icon.png"}
                     value={phone} />
                 <Tag
                     cursorPointer={true}
-                    icon={"fa-plus"}
+                    icon={"images/addmore_icon.png"}
                     value={"Add More"} />
             </ContainerTags>
         </ContainerCard>

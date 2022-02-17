@@ -18,7 +18,7 @@ export const Layout = ({ children }: any) => {
     return <div className="layout">
         <header>
             <div className="go-back" onClick={goBack}>
-                <img data-testid="button-go-back" className="icon_trash" src="/icon_back.png" />
+                <img data-testid="button-go-back" className="icon_trash" src="/images/icon_back.png" />
                 <span className="back-page-label">Go back</span>
             </div>
             <span data-testid="full-username" className="userName">{actionUserContext.userName}</span>
