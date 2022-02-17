@@ -23,9 +23,9 @@ For better visualization in mobile device environments for responsiveness testin
 
 (There is a problem that when executing the npm run build command, even with the script showing success, the "index.html" file generated in the "build" folder is not created correctly. This is a problem that could not be solved even with a lot of research. But when opening the link above, we can see that the deployment was done correctly through the favicon displayed in the browser tab. 😓)
 
-Home Page                     |List Page Loading             |List Page                     |Error Page                    |
-:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|
-![](./home_page.png)          |![](./list_page_loading.png)  |![](./list_page.png)          |![](./error_page.png)         |
+Home Page                     |List Page Loading             |List Page                     |Error Page                    |Empty List                    |
+:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|  
+![](./home_page.png)          |![](./list_page_loading.png)  |![](./list_page.png)          |![](./error_page.png)         |![](./empty_list.png)
 
 #
 ## Bonus
