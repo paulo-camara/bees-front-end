@@ -19,7 +19,7 @@ The "scripts" folder stores any and all scripts that are necessary, at the momen
 
 #
 ## Deploy
-For better visualization in mobile device environments for responsiveness testing, a static site was deployed in AWS S3 at the following URL: ~insert url here~
+For better visualization in mobile device environments for responsiveness testing, a static site was deployed in AWS S3 at the following URL: http://bees-front-end.s3-website-us-east-1.amazonaws.com/
 
 Home Page                     |List Page Loading             |List Page                     |Error Page                    |
 :----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|
