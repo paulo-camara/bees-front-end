@@ -18,6 +18,8 @@ export const List = () => {
         /**This validation prevents the user from entering the brewery 
          * listing page directly without having filled in the fields in Home */
         actionUserContext.userName ? getData() : history.push('/');
+
+        return () => actionUserContext.reset();
     }, []);
 
     const getData = () => {
@@ -34,12 +36,9 @@ export const List = () => {
 
     const getDataSuccess = (data: any) => {
         setData(data);
-
-        toastr.error("Message");
     };
 
     const getDataFail = () => {
-        toastr.error("Message");
         history.push('/error');
     };
 
