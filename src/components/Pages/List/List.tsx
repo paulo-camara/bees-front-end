@@ -40,6 +40,8 @@ export const List = () => {
     };
 
     const onDeleteItem = (teste: string) => {
+        /** the removal is done in such a way that we manage the state and remove what 
+         * the user wants to delete, given that the api has no way to effectively delete it. */
         const newData = data.filter(({ id }) => id !== teste);
 
         setData(newData);
@@ -61,7 +63,6 @@ export const List = () => {
                             onRemove={onDeleteItem} />
                     )
                 })}
-
                 {data.length === 0 && <span className="message-data-empty">No items to show</span>}
             </div>
         </Layout>
