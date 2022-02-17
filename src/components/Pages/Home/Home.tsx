@@ -32,41 +32,43 @@ export const Home = () => {
 
     return (
         <div className="container-list-page">
-            <div className="container-fields">
-                <div className="message-rules">
-                    <span>Please, enter your full name bellow</span>
-                </div>
-                <div className="message-rules">
-                    <span> only alphabetical characters are accepted</span>
-                </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+                <div className="container-fields">
+                    <div className="message-rules">
+                        <span>Please, enter your full name bellow</span>
+                    </div>
+                    <div className="message-rules">
+                        <span> only alphabetical characters are accepted</span>
+                    </div>
 
-                <div className="inputs">
-                    <input
-                        className="input-field-name"
-                        data-testid="input-field"
-                        placeholder="Full name"
-                        value={name}
-                        onChange={(event) => handleChangeName(event.target.value)}
-                    />
+                    <div className="inputs">
+                        <input
+                            className="input-field-name"
+                            data-testid="input-field"
+                            placeholder="Full name"
+                            value={name}
+                            onChange={(event) => handleChangeName(event.target.value)}
+                        />
+                    </div>
+                    <div className="inputs">
+                        <input
+                            className="input-field-older-than"
+                            data-testid="input-check-box"
+                            type={"checkbox"}
+                            checked={olderThan}
+                            onChange={({ target }) => setOlderThan(target.checked)}
+                        />
+                        <label>Are you older than 18 years old?</label>
+                    </div>
+                    <button
+                        className="action-enter"
+                        data-testid="button-enter"
+                        onClick={verifyContitions}
+                    >
+                        Enter
+                    </button>
                 </div>
-                <div className="inputs">
-                    <input
-                        className="input-field-older-than"
-                        data-testid="input-check-box"
-                        type={"checkbox"}
-                        checked={olderThan}
-                        onChange={({ target }) => setOlderThan(target.checked)}
-                    />
-                    <label>Are you older than 18 years old?</label>
-                </div>
-                <button
-                    className="action-enter" 
-                    data-testid="button-enter"
-                    onClick={verifyContitions}
-                >
-                    Enter
-                </button>
-            </div> 
+            </div>
             <div className="image-bees">
                 <img src="/logo_bees.png" />
             </div>

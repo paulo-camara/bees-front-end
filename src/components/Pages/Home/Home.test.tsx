@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Home } from "./Home";
 
 describe('Test Home page', () => {
-    it('Expect render message about rules to use the system', () => {
+    test('Expect render message about rules to use the system', () => {
         render(<Home />);
         const messageFullName = screen.getByText('Please, enter your full name bellow');
         const messageOnlyAlphabeticalChar = screen.getByText('only alphabetical characters are accepted');

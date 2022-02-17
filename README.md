@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Chalenge Bees
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+The project has three pages, where the first page must insert your full name and mark if you are over 18 years old. If the information is not filled in, a message will be given according to the reason for the error, but if the two information is entered by clicking the Enter button, then you will be directed to the screen with the list of breweries. On this second screen it will be possible to view the full name in the upper right corner and the back button (Which will take you to the previous page) in the upper left corner and the list of breweries on cards. Each card has a button in its upper right corner in the shape of a trash can, where by clicking we can delete the brewery.
 
-## Available Scripts
+### Folder structure
+The "src" folder contains the components folder which in turn has the folder for each component, the "shared" folder, where the components that are shared between screens must be kept. There is also the "Pages" folder where the screen components are kept inside this folder.
+The "context" folder is responsible for allocating the created React Contexts
+The "scripts" folder stores any and all scripts that are necessary, at the moment the fetch request structure is stored there
 
-In the project directory, you can run:
+## Technologies
+- [React.JS](https://reactjs.org/docs/getting-started.html) 
+- [Node Sass](https://www.npmjs.com/package/node-sass)
+- [Styled Components](https://styled-components.com/) used to create and style components
+- [Toastr](https://www.npmjs.com/package/toastr) used to menssage error/success/warning
+- [Axios](https://axios-http.com/docs/intro) used to requests http
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) used to create unit tests
+- [Amazon AWS S3](https://aws.amazon.com/pt/s3/) used to deploy
 
-### `npm start`
+#
+## Deploy
+For better visualization in mobile device environments for responsiveness testing, a static site was deployed in AWS S3 at the following URL: ~insert url here~
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Home Page                     |List Page Loading             |List Page                     |Error Page                    |
+:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|
+![](./home_page.png)          |![](./list_page_loading.png)  |![](./list_page.png)          |![](./error_page.png)         |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#
+## Bonus
+- Project created with Typescript because I belive is a good pratice that facilitates maintenance.
+- Created an Loading when the feth requests are doing.
+- Validate user inputs in the home page.
+- Did with git commit history keep the possibility to restore previous commits.
+- Created an Error page for when the user navegate to unknow page, he is redirected this error page.
+- I prefer use React Context to manager state global than use a library how Redux because it's simples states.
+- I've created some unit tests, but I believe it would be nice to cover the whole system with tests for added security.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#
+## Start local project
+```
+git clone https://github.com/paulo-camara/bees-front-end.git
+cd bees-front-end
+npm install
+npm start
+```
+## Run unit tests
+```
+npm test
+```

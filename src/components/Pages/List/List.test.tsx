@@ -3,14 +3,14 @@ import { List } from './List';
 
 
 describe('Test List', () => {
-    it('Expect List has label Go back', () => {
+    test('Expect List has label Go back', () => {
         render(<List />);
         const errorMessage = screen.getByText("Go back");
 
         expect(errorMessage).toBeInTheDocument();
     });
 
-    it('Expect List has button Go back', async () => {
+    test('Expect List has button Go back', async () => {
         const { getByTestId } = render(<List />);
 
         const btnNode = await waitFor(() => getByTestId("button-go-back"))
