@@ -16,6 +16,7 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
         <ContainerCard>
             <Header className="header">
                 <img
+                    alt="Trash"
                     className="icon_trash"
                     src="/images/icon_trash.png"
                     onClick={() => onRemove(id)}

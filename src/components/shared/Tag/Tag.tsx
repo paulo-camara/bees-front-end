@@ -9,7 +9,7 @@ type TagPropsModel = {
 export const Tag = ({ value, icon, cursorPointer }: TagPropsModel) => {
     return (
         <ContainerTag cursorPointer={cursorPointer}>
-            <img src={icon} />
+            <img src={icon} alt="Icon-tag"/>
             <span>{value}</span>
         </ContainerTag>
     )

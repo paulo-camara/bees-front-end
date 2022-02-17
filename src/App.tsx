@@ -1,5 +1,5 @@
 import './main.scss';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Home } from './components/Pages/Home/Home';
 import { List } from './components/Pages/List/List';
 import { GenericError } from './components/Pages/GenericError/GenericError';

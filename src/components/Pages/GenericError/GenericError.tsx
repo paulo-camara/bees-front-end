@@ -15,7 +15,7 @@ export const GenericError = () => {
                 <span onClick={retry}>Click here</span>
             </MessageError>
             <div className="image-bees">
-                <img data-testid="image-bees" src="/images/logo_bees.png" />
+                <img data-testid="image-bees" src="/images/logo_bees.png" alt="Logo Bees" />
             </div>
         </GenericErrorContainer>
     )

@@ -5,10 +5,6 @@ import { Request, RequestModel } from "../../../scripts/Request";
 import { Layout } from "../../Layout/Layout";
 import { Card } from "../../shared/Card/Card";
 
-type DataItemModel = {
-    name?: string;
-}
-
 export const List = () => {
     const actionUserContext = useContext(UserContext);
     const history = useHistory();

@@ -70,7 +70,7 @@ export const Home = () => {
                 </div>
             </div>
             <div className="image-bees">
-                <img src="/images/logo_bees.png" />
+                <img src="/images/logo_bees.png" alt="Logo Bees" />
             </div>
         </div>
     );
