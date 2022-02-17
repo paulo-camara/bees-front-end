@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../../contexts/userContext";
 import { Request, RequestModel } from "../../../scripts/Request";
 import { Layout } from "../../Layout/Layout";
 import { Card } from "../../shared/Card/Card";
@@ -9,11 +10,14 @@ type DataItemModel = {
 }
 
 export const List = () => {
+    const actionUserContext = useContext(UserContext);
     const history = useHistory();
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getData();
+        /**This validation prevents the user from entering the brewery 
+         * listing page directly without having filled in the fields in Home */
+        actionUserContext.userName ? getData() : history.push('/');
     }, []);
 
     const getData = () => {
