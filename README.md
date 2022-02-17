@@ -21,7 +21,6 @@ The "scripts" folder stores any and all scripts that are necessary, at the momen
 ## Deploy
 For better visualization in mobile device environments for responsiveness testing, a static site was deployed in AWS S3 at the following URL: http://bees-front-end.s3-website-us-east-1.amazonaws.com/
 
-(There is a problem that when executing the npm run build command, even with the script showing success, the "index.html" file generated in the "build" folder is not created correctly. This is a problem that could not be solved even with a lot of research. But when opening the link above, we can see that the deployment was done correctly through the favicon displayed in the browser tab. 😓)
 
 Home Page                     |Home Page Message             |List Page Loading             |
 :----------------------------:|:----------------------------:|:----------------------------:|
