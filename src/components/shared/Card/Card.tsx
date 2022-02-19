@@ -14,10 +14,9 @@ type CardPropsModel = {
 export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: CardPropsModel) => {
     return (
         <ContainerCard>
-            <Header className="header">
-                <img
+            <Header>
+                <TrashIcon
                     alt="Trash"
-                    className="icon_trash"
                     src="/images/icon_trash.png"
                     onClick={() => onRemove(id)}
                 />
@@ -25,23 +24,14 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
             <Title>
                 <span>{title}</span>
             </Title>
-            <Address className="address">
+            <Address>
                 <span>{address}</span>
             </Address>
             <ContainerTags>
-                <Tag
-                    icon={"/images/phone_icon.png"}
-                    value={type.toUpperCase()} />
-                <Tag
-                    icon={"/images/location-marker.png"}
-                    value={postalCode} />
-                <Tag
-                    icon={"images/phone_icon.png"}
-                    value={phone} />
-                <Tag
-                    cursorPointer={true}
-                    icon={"images/addmore_icon.png"}
-                    value={"Add More"} />
+                <Tag icon={"/images/phone_icon.png"} value={type.toUpperCase()} />
+                <Tag icon={"/images/location-marker.png"} value={postalCode} />
+                <Tag icon={"images/phone_icon.png"} value={phone} />
+                <Tag cursorPointer={true} icon={"images/addmore_icon.png"} value={"Add More"} />
             </ContainerTags>
         </ContainerCard>
     )
@@ -67,6 +57,10 @@ const Header = styled.div`
     }
 `;
 
+const TrashIcon = styled.img`
+    cursor: pointer;
+`;
+
 const Title = styled.div`
     font-weight: 700;
     font-size: 20px;
@@ -84,4 +78,4 @@ const ContainerTags = styled.div`
     gap: 20px;
     display: flex;
     flex-wrap: wrap;
-`
+`;

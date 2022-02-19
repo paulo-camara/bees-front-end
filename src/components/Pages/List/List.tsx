@@ -4,6 +4,8 @@ import { UserContext } from "../../../contexts/userContext";
 import { Request, RequestModel } from "../../../scripts/Request";
 import { Layout } from "../../Layout/Layout";
 import { Card } from "../../shared/Card/Card";
+import { MessageDataEmpty } from "../../shared/MessageDataEmpty/MessageDataEmpty";
+import styled from "styled-components";
 
 export const List = () => {
     const actionUserContext = useContext(UserContext);
@@ -48,7 +50,7 @@ export const List = () => {
 
     return (
         <Layout>
-            <div className="container-list">
+            <ContainerList>
                 {data.map(({ id, name, phone, postal_code, brewery_type, street, city, knox, country }) => {
                     return (
                         <Card
@@ -62,8 +64,18 @@ export const List = () => {
                             onRemove={onDeleteItem} />
                     )
                 })}
-                {data.length === 0 && <span className="message-data-empty">No items to show</span>}
-            </div>
+                {data.length === 0 && <MessageDataEmpty>No items to show</MessageDataEmpty>}
+            </ContainerList>
         </Layout>
     )
 };
+
+const ContainerList = styled.div`
+    background-color: #fffef0;
+    padding: 60px;
+    padding-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+`;

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import styled from "styled-components";
+import { ButtonAction } from "../../../shared/FormComponents/ButtonAction";
+import { InputCheckbox } from "../../../shared/FormComponents/InputCheckbox";
+import { InputField } from "../../../shared/FormComponents/InputField";
 
 interface FormRegisterModelInterface {
     onConfirm: Function;
@@ -24,26 +28,20 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
     };
 
     return (
-        <div className="container-fields">
-            <div className="message-rules">
-                <span>Please, enter your full name bellow</span>
-            </div>
-            <div className="message-rules">
-                <span> only alphabetical characters are accepted</span>
-            </div>
+        <ContainerForm>
+            <MessageRules>Please, enter your full name bellow</MessageRules>
+            <MessageRules>Only alphabetical characters are accepted</MessageRules>
 
-            <div className="inputs">
-                <input
-                    className="input-field-name"
+            <div>
+                <InputField
                     data-testid="input-field"
                     placeholder="Full name"
                     value={name}
                     onChange={(event) => handleChangeName(event.target.value)}
                 />
             </div>
-            <div className="inputs">
-                <input
-                    className="input-field-older-than"
+            <div>
+                <InputCheckbox
                     data-testid="input-check-box"
                     type={"checkbox"}
                     checked={olderThan}
@@ -51,15 +49,23 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
                 />
                 <label>Are you older than 18 years old?</label>
             </div>
-            <input
-                className="action-enter"
-                type={"button"}
+            <ButtonAction
                 value={"Enter"}
                 data-testid="button-enter"
                 onClick={() => {
                     onConfirm({ name, setName, olderThan, setOlderThan } as DataOnConfirmModel)
                 }}
-            />
-        </div>
+            >
+                Enter
+            </ButtonAction>
+        </ContainerForm >
     )
 };
+
+const ContainerForm = styled.div`
+    height: 62vh;
+`;
+
+const MessageRules = styled.div`
+    margin-top: 10px;
+`;

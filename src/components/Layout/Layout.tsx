@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts/userContext";
+import styled from "styled-components";
 
 /** Para que não seja necessário usar repetidamente 
  * componentes em cada tela, foi feito um layout padrão
@@ -8,23 +9,55 @@ import { UserContext } from "../../contexts/userContext";
  */
 export const Layout = ({ children }: any) => {
     const actionUserContext = useContext(UserContext);
-
     const history = useHistory();
 
     const goBack = () => {
         history.goBack();
     };
 
-    return <div className="layout">
-        <header>
-            <div className="go-back" onClick={goBack}>
-                <img data-testid="button-go-back" className="icon_trash" src="/images/icon_back.png" alt="Go Back"/>
-                <span className="back-page-label">Go back</span>
-            </div>
-            <span data-testid="full-username" className="userName">{actionUserContext.userName}</span>
-        </header>
-        <div style={{height: "100%"}}>
+    return (
+        <>
+            <Header>
+                <GoBackContainer onClick={goBack}>
+                    <img
+                        data-testid="button-go-back"
+                        src="/images/icon_back.png"
+                        alt="Go Back"
+                    />
+                    <span>Go back</span>
+                </GoBackContainer>
+                <DisplayFullName data-testid="full-username">{
+                    actionUserContext.userName}
+                </DisplayFullName>
+            </Header>
             {children}
-        </div>
-    </div>
+        </>
+    )
 };
+
+const Header = styled.header`
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2ec54;
+    height: 40px;
+    font-size: 22px;
+    padding: 10px 15px;
+    position: fixed;
+    width: 100%;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
+
+const GoBackContainer = styled.div`
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+`;
+
+const DisplayFullName = styled.span`
+    padding-right: 30px;
+`;
