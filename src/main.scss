@@ -1,5 +1,12 @@
 @import "~toastr/build/toastr.min.css";
 
+html, body, #root  {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    font-family: sans-serif;
+}
+
 @import "./components/Layout/Layout.scss";
 @import "./components/Pages/Home/Home.scss";
 @import "./components/Pages/List/List.scss";
