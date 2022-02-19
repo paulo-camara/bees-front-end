@@ -22,13 +22,13 @@ The "scripts" folder stores any and all scripts that are necessary, at the momen
 For better visualization in mobile device environments for responsiveness testing, a static site was deployed in AWS S3 at the following URL: http://bees-front-end.s3-website-us-east-1.amazonaws.com/
 
 
-Home Page                     |Home Page Message             |List Page Loading             |
-:----------------------------:|:----------------------------:|:----------------------------:|
-![](./home_page.png)          |![](./home_page_message.png)  |![](./list_page_loading.png)  |
+Home Page                                  |Home Page Message                                  |List Page Loading                                  |
+:-----------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|
+![](./public/images/images_readme/home_page.png)  |![](./public/images/images_readme/home_page_message.png)  |![](./public/images/images_readme/list_page_loading.png)  |
 
-List Page                     |Empty List                    |Page Error                    |
-:----------------------------:|:----------------------------:|:----------------------------:|  
-![](./list_page.png)          |![](./empty_list.png)         |![](./error_page.png)
+List Page                                 |Empty List                                 |Page Error                                |
+:----------------------------------------:|:-----------------------------------------:|:----------------------------------------:|  
+![](./public/images/images_readme/list_page.png) |![](./public/images/images_readme/empty_list.png) |![](./public/images/images_readme/error_page.png)|
 #
 ## Bonus
 - Project created with Typescript because I belive is a good pratice that facilitates maintenance.
