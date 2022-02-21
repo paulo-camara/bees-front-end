@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-type TagPropsModel = {
+interface TagPropsModel {
     value: string;
     icon: string;
     cursorPointer?: boolean;
@@ -15,7 +15,7 @@ export const Tag = ({ value, icon, cursorPointer }: TagPropsModel) => {
     )
 };
 
-type ContainerTagModel = {
+interface ContainerTagModel {
     cursorPointer?: boolean;
 };
 

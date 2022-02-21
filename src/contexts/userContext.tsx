@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 
-type UserContextModel = {
+interface UserContextModel {
     userName: string;
     setUserName: Function;
     reset: Function;
@@ -8,7 +8,7 @@ type UserContextModel = {
 
 export const UserContext = createContext({} as UserContextModel);
 
-type UserContextProviderModel = {
+interface UserContextProviderModel {
     children: ReactNode;
 };
 

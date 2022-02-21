@@ -8,7 +8,7 @@ interface FormRegisterModelInterface {
     onConfirm: Function;
 };
 
-export type DataOnConfirmModel = {
+export interface DataOnConfirmModel {
     name: string;
     setName: Function;
     olderThan: boolean;
@@ -28,10 +28,9 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
     };
 
     return (
-        <ContainerForm>
+        <div>
             <MessageRules>Please, enter your full name bellow</MessageRules>
             <MessageRules>Only alphabetical characters are accepted</MessageRules>
-
             <div>
                 <InputField
                     data-testid="input-field"
@@ -58,13 +57,9 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
             >
                 Enter
             </ButtonAction>
-        </ContainerForm >
+        </div >
     )
 };
-
-const ContainerForm = styled.div`
-    height: 62vh;
-`;
 
 const MessageRules = styled.div`
     margin-top: 10px;
