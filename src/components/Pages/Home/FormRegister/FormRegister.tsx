@@ -29,8 +29,10 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
 
     return (
         <div>
-            <MessageRules>Please, enter your full name bellow</MessageRules>
-            <MessageRules>Only alphabetical characters are accepted</MessageRules>
+            <MessageContainer>
+                <MessageRules>Please, enter your full name bellow</MessageRules>
+                <MessageRules>Only alphabetical characters are accepted</MessageRules>
+            </MessageContainer>
             <div>
                 <InputField
                     data-testid="input-field"
@@ -48,19 +50,30 @@ export const FormRegister = ({ onConfirm }: FormRegisterModelInterface) => {
                 />
                 <label>Are you older than 18 years old?</label>
             </div>
-            <ButtonAction
-                value={"Enter"}
-                data-testid="button-enter"
-                onClick={() => {
-                    onConfirm({ name, setName, olderThan, setOlderThan } as DataOnConfirmModel)
-                }}
-            >
-                Enter
-            </ButtonAction>
+            <ButtonContainer>
+                <ButtonAction
+                    value={"Enter"}
+                    data-testid="button-enter"
+                    onClick={() => {
+                        onConfirm({ name, setName, olderThan, setOlderThan } as DataOnConfirmModel)
+                    }}
+                >
+                    Enter
+                </ButtonAction>
+            </ButtonContainer>
         </div >
     )
 };
 
 const MessageRules = styled.div`
     margin-top: 10px;
+`;
+
+const MessageContainer = styled.div`
+    text-align: justify;
+`;
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
 `;

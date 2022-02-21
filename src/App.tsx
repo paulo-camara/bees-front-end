@@ -9,6 +9,9 @@ import { UserContextProvider } from './contexts/userContext';
 const App = () => {
   return (
     <AxiosInterceptors>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"></link>
       <UserContextProvider>
         <Router>
           <Switch>

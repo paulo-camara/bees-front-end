@@ -33,7 +33,6 @@ export const Home = () => {
 };
 
 const ContainerListPage = styled.div`
-    text-align: center;
     background-color: #f2ec54;
     min-height: 100vh;
 `;

@@ -42,7 +42,7 @@ const ContainerCard = styled.div`
     height: 240px;
     border: 1px solid black;
     border-radius: 4px;
-    padding: 5px 20px 20px 20px;
+    padding: 5px 20px 30px 20px;
 `;
 
 const Header = styled.div`
