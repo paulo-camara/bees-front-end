@@ -35,21 +35,25 @@ export const Home = () => {
 const ContainerListPage = styled.div`
     text-align: center;
     background-color: #f2ec54;
-    padding-top: 7%;
+    min-height: 100vh;
 `;
 
 const ContainerForm = styled.div`
     display: flex;
     justify-content: center;
+
+    min-height: 90vh;
+    flex-direction: column;
+    align-items: center;
 `;
 
-const ImageBees = styled.div`
-    bottom: 20px;
-    height: 150px;
+const ImageBees = styled.footer`
     display: flex;
     justify-content: start;
-
-    @media (min-width: 1550px) {
-        padding-top: 2.5%; 
-    }
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: auto auto;
 `;
