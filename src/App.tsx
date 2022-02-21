@@ -11,7 +11,6 @@ const App = () => {
     <AxiosInterceptors>
       <UserContextProvider>
         <Router>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></link>
           <Switch>
             <Route exact path="/">
               <Redirect from="/" to={'/home'} />
