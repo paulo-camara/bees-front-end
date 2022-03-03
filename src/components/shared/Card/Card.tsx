@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import styled from "styled-components";
+import { InputField } from "../FormComponents/InputField";
 import { Tag } from "../Tag/Tag"
 
 type CardPropsModel = {
@@ -12,8 +14,25 @@ type CardPropsModel = {
 };
 
 export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: CardPropsModel) => {
+    const [valueInput, setValueInput] = useState<string>("");
+    const [showInput, setShowInput] = useState<boolean>(false);
+
+    const onkeyPress = (event: any) => {
+        if (event.key === "Enter") setShowInput(false);
+    };
+
+    const onChange = (event: any) => {
+        setValueInput(event.target.value);
+    };
+
+    const closeInput = (e : any)=> {
+        if(showInput && !e.target.id) {
+            setShowInput(false);
+        }
+    };
+
     return (
-        <ContainerCard>
+        <ContainerCard onClick={closeInput}>
             <Header>
                 <TrashIcon
                     alt="Trash"
@@ -28,10 +47,18 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
                 <span>{address}</span>
             </Address>
             <ContainerTags>
-                <Tag icon={"/images/phone_icon.png"} value={type.toUpperCase()} />
-                <Tag icon={"/images/location-marker.png"} value={postalCode} />
-                <Tag icon={"images/phone_icon.png"} value={phone} />
-                <Tag cursorPointer={true} icon={"images/addmore_icon.png"} value={"Add More"} />
+                {type && <Tag icon={"/images/phone_icon.png"} value={type.toUpperCase()} />}
+                {address && <Tag icon={"/images/location-marker.png"} value={postalCode} />}
+                {phone && <Tag icon={"images/phone_icon.png"} value={phone} />}
+                <Tag
+                    cursorPointer={true}
+                    icon={"images/addmore_icon.png"}
+                    value={valueInput || "Add More"}
+                    onClick={() => {
+                        setShowInput(true)
+                    }}>
+                    {showInput && <InputField id="testando" autoFocus style={{ margin: "0px", height: "18px", width: "68px" }} onChange={onChange} onKeyPress={onkeyPress} value={valueInput} />}
+                </Tag>
             </ContainerTags>
         </ContainerCard>
     )
@@ -39,10 +66,9 @@ export const Card = ({ title, address, phone, postalCode, type, id, onRemove }: 
 
 const ContainerCard = styled.div`
     width: 240px;
-    height: 240px;
     border: 1px solid black;
     border-radius: 4px;
-    padding: 5px 20px 30px 20px;
+    padding: 5px 20px 20px 20px;
 `;
 
 const Header = styled.div`

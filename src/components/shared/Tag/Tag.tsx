@@ -4,13 +4,15 @@ interface TagPropsModel {
     value: string;
     icon: string;
     cursorPointer?: boolean;
+    onClick?: Function;
+    children?: React.ReactNode;
 };
 
-export const Tag = ({ value, icon, cursorPointer }: TagPropsModel) => {
+export const Tag = ({ value, icon, cursorPointer, onClick, children }: TagPropsModel) => {
     return (
-        <ContainerTag cursorPointer={cursorPointer}>
-            <img src={icon} alt="Icon-tag"/>
-            <span>{value}</span>
+        <ContainerTag onClick={() => onClick && onClick()} cursorPointer={cursorPointer}>
+            <img src={icon} alt="Icon-tag" />
+            {!children ? <span>{value}</span> : children}
         </ContainerTag>
     )
 };
@@ -34,5 +36,6 @@ const ContainerTag = styled.div<ContainerTagModel>`
 
     span {
         margin-top: 2px;
+        word-break: break-all;
     }
 `;
